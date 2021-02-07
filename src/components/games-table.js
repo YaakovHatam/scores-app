@@ -1,13 +1,8 @@
 import GameRow from './game-row';
 import Table from 'react-bootstrap/Table';
+import { connect } from 'react-redux';
 
-function GamesTable() {
-    const games = [
-        {HomeTeam: 'a', AwayTeam: 'b', Score: '3-2', Date: '01-01-2021', Time: '16:45'},
-        {HomeTeam: 'a', AwayTeam: 'b', Score: '3-2', Date: '01-01-2021', Time: '16:45'},
-        {HomeTeam: 'a', AwayTeam: 'b', Score: '3-2', Date: '01-01-2021', Time: '16:45'},
-        {HomeTeam: 'a', AwayTeam: 'b', Score: '3-2', Date: '01-01-2021', Time: '16:45'},
-    ];
+function GamesTable(props) {
     return (
         <Table striped bordered hover>
             <thead>
@@ -20,11 +15,21 @@ function GamesTable() {
                 </tr>
             </thead>
             <tbody>
-                {games.map(g => <GameRow {...g} />)}
+                {props.games.map(g => <GameRow {...g} />)}
             </tbody>
         </Table>
     );
 }
 
-export default GamesTable;
+function mapStateToProps(state, ownProps) {
+    return {
+        games: state.gameReducer.games
+    }
+}
+
+const mapDispatchToProps = {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GamesTable);
 

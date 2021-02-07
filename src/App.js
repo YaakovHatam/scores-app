@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import GamesPage from './components/games-page';
+import DataPage from './components/data-page';
 import HomePage from './components/home-page';
 import NavMain from './components/nav-main';;
 
@@ -13,6 +14,10 @@ function App() {
     {
       anchor: 'Games',
       link: '/games'
+    },
+    {
+      anchor: 'Data',
+      link: '/data'
     }
   ];
 
@@ -28,6 +33,9 @@ function App() {
           </Route>
           <Route path='/games'>
             <GamesPage />
+          </Route>
+          <Route path='/data'>
+            <DataPage />
           </Route>
         </Switch>
       </Container>
