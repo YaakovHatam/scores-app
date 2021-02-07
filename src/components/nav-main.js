@@ -5,7 +5,7 @@ function NavMain(props) {
     const menuItems = props.items;
     return (
         <Nav>
-            {menuItems.map(mi => <Nav.Item><Link to={mi.link}>{mi.anchor}</Link></Nav.Item>)}
+            {menuItems.map(mi => <Nav.Item> <Nav.Link><Link to={mi.link}>{mi.anchor}</Link></Nav.Link></Nav.Item>)}
         </Nav>
     );
 }

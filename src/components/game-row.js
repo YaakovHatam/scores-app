@@ -1,11 +1,13 @@
 
-function GamesRow() {
+function GamesRow(props) {
+
     return (
         <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td>{props.HomeTeam}</td>
+            <td>{props.AwayTeam}</td>
+            <td>{props.Score}</td>
+            <td>{props.Date}</td>
+            <td>{props.Time}</td>
         </tr>
     );
 }

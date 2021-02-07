@@ -3,23 +3,24 @@ import Table from 'react-bootstrap/Table';
 
 function GamesTable() {
     const games = [
-        {h: 'a', a: 'b', score: '3-2'},
-        {h: 'a', a: 'b', score: '3-2'}, 
-        {h: 'a', a: 'b', score: '3-2'}, 
-        {h: 'a', a: 'b', score: '3-2'}
+        {HomeTeam: 'a', AwayTeam: 'b', Score: '3-2', Date: '01-01-2021', Time: '16:45'},
+        {HomeTeam: 'a', AwayTeam: 'b', Score: '3-2', Date: '01-01-2021', Time: '16:45'},
+        {HomeTeam: 'a', AwayTeam: 'b', Score: '3-2', Date: '01-01-2021', Time: '16:45'},
+        {HomeTeam: 'a', AwayTeam: 'b', Score: '3-2', Date: '01-01-2021', Time: '16:45'},
     ];
     return (
         <Table striped bordered hover>
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Home team</th>
                     <th>Away team</th>
                     <th>Score</th>
+                    <th>Date</th>
+                    <th>Time</th>
                 </tr>
             </thead>
             <tbody>
-                {games.map(g => <GameRow />)}
+                {games.map(g => <GameRow {...g} />)}
             </tbody>
         </Table>
     );

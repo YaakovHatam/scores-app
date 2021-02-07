@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Container from 'react-bootstrap/Container';
 import GamesPage from './components/games-page';
 import HomePage from './components/home-page';
 import NavMain from './components/nav-main';;
-
 
 function App() {
   const menuItems = [
@@ -18,17 +18,19 @@ function App() {
 
   return (
     <Router>
-      <div>
-        <NavMain items={menuItems} />
-      </div>
-      <Switch>
-        <Route path='/home'>
-          <HomePage />
-        </Route>
-        <Route path='/games'>
-          <GamesPage />
-        </Route>
-      </Switch>
+      <Container>
+        <div>
+          <NavMain items={menuItems} />
+        </div>
+        <Switch>
+          <Route path='/home'>
+            <HomePage />
+          </Route>
+          <Route path='/games'>
+            <GamesPage />
+          </Route>
+        </Switch>
+      </Container>
     </Router>
   );
 }
